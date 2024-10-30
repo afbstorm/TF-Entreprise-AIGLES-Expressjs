@@ -182,12 +182,16 @@ const userController = {
           const sanitizedUserUpdate = updateData.user ? sanitizeInput(updateData.user, ALLOWED_USER_FIELDS) : {};
 
           const sanitizedArticleUpdates = {};
+
           // Pour mettre à jour chaque article
           // Récupérer les données d'update
           // Sanitize les données par rapport aux champs autorisés
           // Les stocker dans l'objet avec l'id comme clé
           Object.keys(updateData.articleUpdates || {}).forEach((articleId) => {
-            sanitizedArticleUpdates[articleId] = sanitizeInput(updateData.articleUpdates, ALLOWED_ARTICLE_FIELDS);
+            sanitizedArticleUpdates[articleId] = sanitizeInput(
+              updateData.articleUpdates[articleId],
+              ALLOWED_ARTICLE_FIELDS
+            );
           });
 
           // Lancer l'exécution des updates en simultanées
