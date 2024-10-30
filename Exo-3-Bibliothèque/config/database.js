@@ -1,10 +1,10 @@
 module.exports = {
-    dialect: 'mssql',
-    host: 'localhost',
-    username: 'sa',
-    password: 'VOTREPASSWORD',
-    database: 'VOTREDB',
-    options: {
-        trustServerCertificate: true
-    }
-}
+  dialect: "mssql",
+  host: "localhost",
+  username: "sa",
+  password: "mogogu69",
+  database: "formation",
+  options: {
+    trustServerCertificate: true,
+  },
+};
